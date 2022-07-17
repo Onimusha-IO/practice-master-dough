@@ -1,97 +1,109 @@
-.modal {
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 10px;
-  border-color: #cccccc;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+.modalBackGround {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background: rgba(0, 0, 0, 0.47);
+  justify-content: center;
+  align-items: center;
 
-  .header {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    margin-right: 20px;
-    margin-left: 20px;
+  .modal {
+    width: fit-content;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    background: white;
+    border-color: #cccccc;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-    .iconLeft {
-      color: white;
-      pointer-events: none;
-    }
-
-    label {
-      font-size: 20px;
-      font-weight: 500;
-    }
-
-    .iconRight {
-      color: #d9d9d9;
-      font-size: 30px;
-    }
-  }
-
-  .formLogin {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-right: 30px;
-    margin-left: 30px;
-    margin-bottom: 30px;
-    gap: 10px;
-
-    .field {
-      position: relative;
+    .header {
       display: flex;
-      align-items: center;
+      justify-content: space-between;
+      margin-top: 20px;
+      margin-bottom: 30px;
+      margin-right: 20px;
+      margin-left: 20px;
 
-      input {
-        width: 357px;
-        height: 60px;
-        border: 1px solid #cccccc;
-        border-radius: 5px;
-        text-align: center;
-
-        &:focus + label {
-          transform: translateY(-18px) scale(0.9);
-        }
-
-        &:not(:placeholder-shown) + label {
-          transform: translateY(-18px) scale(0.9);
-        }
-      }
-
-      input[type="password"] {
-        letter-spacing: 6px;
+      .iconLeft {
+        color: white;
+        pointer-events: none;
       }
 
       label {
-        position: absolute;
-        color: #555555;
-        left: 15px;
-        transform-origin: 0%;
-        transition: all 0.4s;
-        pointer-events: none;
+        font-size: 20px;
+        font-weight: 500;
+      }
+
+      .iconRight {
+        color: #d9d9d9;
+        font-size: 30px;
       }
     }
-  }
 
-  .options {
-    display: flex;
-    justify-content: space-between;
-    margin-left: 32px;
-    margin-right: 32px;
-    margin-bottom: 30px;
-
-    .buttons {
-      width: 150px;
-      height: 40px;
+    .formLogin {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      color: white;
-      font-size: 16px;
-      background-color: #03495c;
-      border-radius: 5px;
+      margin-right: 30px;
+      margin-left: 30px;
+      margin-bottom: 30px;
+      gap: 10px;
+
+      .field {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        input {
+          width: 357px;
+          height: 60px;
+          border: 1px solid #cccccc;
+          border-radius: 5px;
+          text-align: center;
+
+          &:focus + label {
+            transform: translateY(-18px) scale(0.9);
+          }
+
+          &:not(:placeholder-shown) + label {
+            transform: translateY(-18px) scale(0.9);
+          }
+        }
+
+        input[type="password"] {
+          letter-spacing: 6px;
+        }
+
+        label {
+          position: absolute;
+          color: #555555;
+          left: 15px;
+          transform-origin: 0%;
+          transition: all 0.4s;
+          pointer-events: none;
+        }
+      }
+    }
+
+    .options {
+      display: flex;
+      justify-content: space-between;
+      margin-left: 32px;
+      margin-right: 32px;
+      margin-bottom: 30px;
+
+      .buttons {
+        width: 150px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 16px;
+        background-color: #03495c;
+        border-radius: 5px;
+      }
     }
   }
 }
