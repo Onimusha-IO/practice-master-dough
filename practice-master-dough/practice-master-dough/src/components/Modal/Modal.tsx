@@ -15,7 +15,7 @@ const Modal = () => {
   const { modal, setModal } = useContext(UiContext);
 
   const cancelModal = () => {
-    setModal({ state: false, type: null, data: null });
+    setModal({ state: false, type: null, title: "", accept: "", reject: "", data: null });
   };
 
   useEffect(() => {
@@ -76,7 +76,8 @@ const Modal = () => {
           <button
             className={styles.buttons}
             onClick={() => {
-              call(modal.type, modal.data ? modal.data : { id: id, name: text }, cancelModal);
+              const values = modal.data ? modal.data : { id: id, name: text };
+              call(modal.type, { id: id, name: text }, cancelModal);
             }}
           >
             {modal.accept}

@@ -10,6 +10,7 @@ const list = async (values: any) => {
 };
 
 const add = async (values: any) => {
+  console.log("add values: ", values);
   const { name } = values;
   try {
     const res = await pool.query("insert into dough(name) values($1)", [name]);
@@ -20,6 +21,7 @@ const add = async (values: any) => {
 };
 
 const modify = async (values: any) => {
+  console.log("modify values: ", values);
   const { id, name } = values;
   try {
     const res = await pool.query("update dough set name = $1 where id = $2 ", [name, id]);
@@ -30,6 +32,7 @@ const modify = async (values: any) => {
 };
 
 const erase = async (values: any) => {
+  console.log("erase values: ", values);
   const { id } = values;
   try {
     const res = await pool.query("update dough set enable = false where id = $1 ", [id]);

@@ -14,7 +14,7 @@ const get = async () => {
 
 const add = async (values: any, func: any) => {
   try {
-    const res = await client.post("api/dough/add", { name: values.name }, { headers: config.headers });
+    const res = await client.post("api/dough/add", values, { headers: config.headers });
     if (res.status === 200) {
       func();
     }
@@ -25,10 +25,11 @@ const add = async (values: any, func: any) => {
 
 const modify = async (values: any, func: any) => {
   try {
-    const res = await client.put("api/dough/modify", { name: values.name, id: values.id }, { headers: config.headers });
+    const res = await client.put("api/dough/modify", values, { headers: config.headers });
     if (res.status === 200) {
       func();
     }
+    console.log(res);
   } catch (error) {
     console.log("modify error: ", error);
   }
@@ -36,7 +37,7 @@ const modify = async (values: any, func: any) => {
 
 const erase = async (values: any, func: any) => {
   try {
-    const res = await client.delete("api/dough/erase", { data: { name: values.name, id: values.id }, headers: config.headers });
+    const res = await client.delete("api/dough/erase", { data: values, headers: config.headers });
     console.log(res);
     if (res.status === 200) {
       func();
